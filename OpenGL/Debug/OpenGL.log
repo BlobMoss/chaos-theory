@@ -1,10 +1,5 @@
-﻿Main.obj : error LNK2019: unresolved external symbol __imp__glClear@4 referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwWindowShouldClose referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwPollEvents referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function _main
-Main.obj : error LNK2019: unresolved external symbol _glfwSwapBuffers referenced in function _main
-C:\Users\melvi\OneDrive\Dokument\GitHub\low-level-fun\OpenGL\Dependencies\GLFW\lib-vc2019\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-C:\Users\melvi\OneDrive\Dokument\GitHub\low-level-fun\OpenGL\Debug\OpenGL.exe : fatal error LNK1120: 8 unresolved externals
+﻿  Main.cpp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\melvi\OneDrive\Dokument\GitHub\low-level-fun\OpenGL\Debug\vc120.pdb'; linking object as if no debug info
+  OpenGL.vcxproj -> C:\Users\melvi\OneDrive\Dokument\GitHub\low-level-fun\OpenGL\Debug\OpenGL.exe
