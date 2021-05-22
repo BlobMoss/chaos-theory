@@ -115,7 +115,6 @@ void Shader::Unbind() const
     glUseProgram(0);
 }
 
-//Functions for setting different types of uniforms
 void Shader::SetUniform1i(const std::string& name, int v)
 {
     glUniform1i(GetUniformLocation(name), v);
@@ -131,6 +130,10 @@ void Shader::SetUniform2f(const std::string& name, float v0, float v1)
 void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3)
 {
     glUniform4f(GetUniformLocation(name), v0, v1, v2, v3);
+}
+void Shader::SetUniformMat4f(const std::string& name, const glm::mat4& matrix)
+{
+    glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 }
 
 //Finds the location of a uniform within the shader code

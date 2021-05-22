@@ -9,7 +9,6 @@ void Renderer::Clear() const
 
 void Renderer::Draw(const VertexArray& vertexArray, const IndexBuffer& indexBuffer, const Shader& shader) const
 {
-    //Binds everything and draws triangles based on indexed verices
     shader.Bind();
     vertexArray.Bind();
     indexBuffer.Bind();
