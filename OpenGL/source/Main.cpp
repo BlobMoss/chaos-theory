@@ -18,18 +18,20 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-const unsigned int windowWidth = 600;
-const unsigned int windowHeight = 450;
+const unsigned int windowWidth = 400;
+const unsigned int windowHeight = 300;
 
 glm::vec3* selectedMagnet;
 
 //Places magnets in an eqilateral triangle with the side of 2 * radius
-float radius = 30.0f;
+const float triangleRadius = 25.0f;
 glm::vec3 magnets[3] = {
-    glm::vec3(windowWidth / 2.0f + radius, windowHeight / 2.0f - sqrt(3.0f) * radius / 2.0f, 0.0f),
-    glm::vec3(windowWidth / 2.0f         , windowHeight / 2.0f + sqrt(3.0f) * radius / 2.0f, 0.0f),
-    glm::vec3(windowWidth / 2.0f - radius, windowHeight / 2.0f - sqrt(3.0f) * radius / 2.0f, 0.0f)
+    glm::vec3(windowWidth / 2.0f + triangleRadius, windowHeight / 2.0f - sqrt(3.0f) * triangleRadius / 2.0f, 0.0f),
+    glm::vec3(windowWidth / 2.0f                 , windowHeight / 2.0f + sqrt(3.0f) * triangleRadius / 2.0f, 0.0f),
+    glm::vec3(windowWidth / 2.0f - triangleRadius, windowHeight / 2.0f - sqrt(3.0f) * triangleRadius / 2.0f, 0.0f)
 };
+
+const float magnetRadius = 10.0f;
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -40,7 +42,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
         //The length of an array can be calculated by dividing the size of the entire array by the size of a single element
         for (unsigned int i = 0; i < sizeof(magnets) / sizeof(magnets[0]); i++)
         {
-            if (glm::distance(glm::vec3(xpos, windowHeight - ypos, 0.0f), magnets[i]) < 30.0f)
+            if (glm::distance(glm::vec3(xpos, windowHeight - ypos, 0.0f), magnets[i]) < 15.0f)
             {
                 std::cout << "Click!" << std::endl;
                 selectedMagnet = &magnets[i];
@@ -65,6 +67,7 @@ int main(void)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     //Set window 
     window = glfwCreateWindow(windowWidth, windowHeight, "CHAOS THEORY!", NULL, NULL);
@@ -99,10 +102,10 @@ int main(void)
         };
 
         float magnetVertices[] = {
-            -20.0f, -20.0f, 0.0f, 0.0f,
-             20.0f, -20.0f, 1.0f, 0.0f,
-             20.0f,  20.0f, 1.0f, 1.0f,
-            -20.0f,  20.0f, 0.0f, 1.0f
+            -magnetRadius, -magnetRadius, 0.0f, 0.0f,
+             magnetRadius, -magnetRadius, 1.0f, 0.0f,
+             magnetRadius,  magnetRadius, 1.0f, 1.0f,
+            -magnetRadius,  magnetRadius, 0.0f, 1.0f
         };
         //An array of indeces to indicate which vertices go together
         unsigned int indices[] = {
@@ -148,7 +151,7 @@ int main(void)
         textureShader.Bind();
         textureShader.SetUniformMat4f("u_MVP", mvp);
         //Create a texture for the shader
-        Texture texture("content/textures/sergej.png");
+        Texture texture("content/textures/magnet.png");
         texture.Bind();
         textureShader.SetUniform1i("u_Texture", 0);
 

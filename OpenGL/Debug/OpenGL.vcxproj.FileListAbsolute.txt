@@ -1,1 +1,3 @@
 C:\Users\melvi\OneDrive\Dokument\GitHub\low-level-fun\OpenGL\Debug\OpenGL.exe
+C:\Users\Melvin\Documents\GitHub\low-level-fun\OpenGL\Debug\OpenGL.exe
+C:\Users\Melvin\Documents\GitHub\low-level-fun\OpenGL\Debug\OpenGL.pdb

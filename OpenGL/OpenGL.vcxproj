@@ -600,7 +600,7 @@
     <ClInclude Include="source\VertexBufferLayout.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="content\textures\sergej.png" />
+    <Image Include="content\textures\magnet.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
