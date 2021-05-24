@@ -18,20 +18,20 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
-const unsigned int windowWidth = 400;
-const unsigned int windowHeight = 300;
+const unsigned int windowWidth = 600;
+const unsigned int windowHeight = 450;
 
 glm::vec3* selectedMagnet;
 
 //Places magnets in an eqilateral triangle with the side of 2 * radius
-const float triangleRadius = 25.0f;
+const float triangleRadius = 30.0f;
 glm::vec3 magnets[3] = {
     glm::vec3(windowWidth / 2.0f + triangleRadius, windowHeight / 2.0f - sqrt(3.0f) * triangleRadius / 2.0f, 0.0f),
     glm::vec3(windowWidth / 2.0f                 , windowHeight / 2.0f + sqrt(3.0f) * triangleRadius / 2.0f, 0.0f),
     glm::vec3(windowWidth / 2.0f - triangleRadius, windowHeight / 2.0f - sqrt(3.0f) * triangleRadius / 2.0f, 0.0f)
 };
 
-const float magnetRadius = 10.0f;
+const float magnetRadius = 12.5f;
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
