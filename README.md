@@ -1,1 +1,5 @@
-# low-level-fun
+# Chaos Theory
+
+## The magnetic pendulum fractal:
+
+    
