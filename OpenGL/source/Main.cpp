@@ -44,7 +44,6 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
         {
             if (glm::distance(glm::vec3(xpos, windowHeight - ypos, 0.0f), magnets[i]) < 15.0f)
             {
-                std::cout << "Click!" << std::endl;
                 selectedMagnet = &magnets[i];
             }
         }
@@ -70,7 +69,7 @@ int main(void)
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     //Set window 
-    window = glfwCreateWindow(windowWidth, windowHeight, "CHAOS THEORY!", NULL, NULL);
+    window = glfwCreateWindow(windowWidth, windowHeight, "The magnetic pendulum fractal", NULL, NULL);
     if (!window)
     {
         glfwTerminate();

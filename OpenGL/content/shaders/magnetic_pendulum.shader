@@ -30,7 +30,7 @@ uniform vec2 u_Pos2;
 uniform vec2 u_Pos3;
 
 //lower dt and higher maxSteps increases accuracy and smoothness, but decreases performance significantly
-float dt = 0.05;
+float dt = 0.02;
 int maxSteps = 5000;
 vec2 origin = vec2(0.50, 0.50);
 
